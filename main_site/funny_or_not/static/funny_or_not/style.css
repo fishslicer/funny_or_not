@@ -1,0 +1,40 @@
+h1 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.video-list {
+    background-color: #065C94;
+}
+
+b {
+    color: red;
+}
+
+.outer-title-name {
+    width: 100%;
+}
+
+.title-name {
+    background-color: red;
+    width: 40%;
+    postion: relative;
+
+    animation-name: back-forth;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes back-forth {
+
+    0% { background-color:red; left:0px;}
+    25% { background-color:yellow; left:100px;}
+    50% { background-color:blue; left:200px;}
+    75% { background-color:green; left: 100px;}
+    100% { background-color:red; left: 0px;}
+
+}
+
+
+

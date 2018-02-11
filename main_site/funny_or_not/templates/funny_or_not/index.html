@@ -1,19 +1,22 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'funny_or_not/style.css' %}" />
+
 <!DOCTYPE html>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-{% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'funny_or_not/style.css' %}" />
+
 
 
 <html lang="en">
-<h1>FUNNY OR NOT</h1>
-<div>
+
+<div class="outer-title-name"><div class="title-name"><h1>FUNNY OR NOT</h1></div></div>
+<div class="video-list">
     <ul style="list-style-type:none">
 
     {% for video in latest_video_list %}
         <div>
-        <li>
+        <li class="wow">
             <b>{{video.title}}</b>
             <div class="embed-responsive embed-responsive-16by9">
                 <iframe
@@ -32,3 +35,6 @@
 </div>
 
 </html>
+
+
+
