@@ -14,6 +14,5 @@ class Comment(models.Model):
     video = models.ForeignKey(Video, on_delete=models.CASCADE)
     user = models.CharField(max_length=200)
     text = models.CharField(max_length=2000)
-    funny = models.BooleanField(default=FALSE)
-
+    funny = models.BooleanField(default=False)
     
