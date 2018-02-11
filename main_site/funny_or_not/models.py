@@ -9,6 +9,9 @@ class Video(models.Model):
     not_funny = models.IntegerField(default=0)
     pub_date = models.DateTimeField('date posted')
 
+    def get_bar(self):
+        return (self.funny + 1) * 100 / (self.funny + self.not_funny + 1)
+
 #comment to specific video
 class Comment(models.Model):
     video = models.ForeignKey(Video, on_delete=models.CASCADE)

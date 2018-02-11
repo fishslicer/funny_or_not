@@ -16,3 +16,4 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         return Video.objects.order_by('-pub_date')[:5]
+

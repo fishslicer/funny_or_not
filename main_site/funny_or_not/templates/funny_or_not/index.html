@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 
 
@@ -25,6 +26,16 @@
         <div class='single-vid'>
         <li>
             <b class="vid-title">{{video.title}}</b>
+            <br>
+            <button type="button" class="btn btn-success" value"Toggle" id="toggle">
+                <i class="fa fa-thumbs-up"></i>
+            </button>
+            <button type="button" class="btn btn-danger" value"Toggle" id="toggle">
+                <i class="fa fa-thumbs-down"></i>
+            </button>
+            <br>
+            {{video.get_bar}}
+
             <div class="embed-responsive embed-responsive-16by9">
                 <iframe
                 src="{{video.link}}"
@@ -32,8 +43,17 @@
                 align="center">
                 </iframe>
             </div>
+
             <p class="vid-desc">{{video.desc}}</p>
+
+            <div class="dropdown">
+                <button type="button" class="btn btn-primary" value"Toggle" id="toggle">V</button>
+                <div class="dropdown-content">
+                    <p>hi</p>
+                </div>
+            </div>
         </li>
+
         </div>
 
     {% endfor %}
