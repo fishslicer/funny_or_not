@@ -10,21 +10,29 @@
 
 <html lang="en">
 
-<div class="outer-title-name"><div class="title-name"><h1>FUNNY OR NOT</h1></div></div>
+<div class="outer-title-name"><div class="title-name">
+    <h1>
+        <img class="ban-lft" src="../static/funny_or_not/dance-banana.gif">
+        FUNNY OR NOT
+        <img class="ban-rt" src="../static/funny_or_not/dance-banana.gif">
+    </h1>
+</div></div>
+
 <div class="video-list">
     <ul style="list-style-type:none">
 
     {% for video in latest_video_list %}
-        <div>
-        <li class="wow">
-            <b>{{video.title}}</b>
+        <div class='single-vid'>
+        <li>
+            <b class="vid-title">{{video.title}}</b>
             <div class="embed-responsive embed-responsive-16by9">
                 <iframe
                 src="{{video.link}}"
-                frameborder="0" allowfullscreen>
+                frameborder="0" allowfullscreen
+                align="center">
                 </iframe>
             </div>
-            <p>{{video.desc}}</p>
+            <p class="vid-desc">{{video.desc}}</p>
         </li>
         </div>
 

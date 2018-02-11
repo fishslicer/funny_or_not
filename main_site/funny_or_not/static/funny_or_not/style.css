@@ -4,12 +4,42 @@ h1 {
     margin-bottom: 40px;
 }
 
-.video-list {
-    background-color: #065C94;
+.ban-lft {
+    width:7%;
+}
+
+.ban-rt {
+    width:7%;
+}
+
+
+.vid-title {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.vid-desc {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+iframe {
+    padding: 10px;
+}
+
+.single-vid{
+    background-color: #d3d3d3;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-style: outset;
+    border-color: grey;
+    margin-bottom: 20px;
+    /*padding-bottom: 10px;*/
 }
 
 b {
-    color: red;
+    color: black;
 }
 
 .outer-title-name {
@@ -18,8 +48,8 @@ b {
 
 .title-name {
     background-color: red;
-    width: 40%;
-    postion: relative;
+    width: 100%;
+    postion: center;
 
     animation-name: back-forth;
     animation-duration: 4s;
@@ -34,6 +64,12 @@ b {
     75% { background-color:green; left: 100px;}
     100% { background-color:red; left: 0px;}
 
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+    margin: 20px;
 }
 
 
