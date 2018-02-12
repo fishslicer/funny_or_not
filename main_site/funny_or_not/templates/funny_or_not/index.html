@@ -25,7 +25,10 @@
     {% for video in latest_video_list %}
         <div class='single-vid'>
         <li>
-            <b class="vid-title">{{video.title}}</b>
+            <b class="vid-title">
+                <a href="/funny_or_not/{{video.id}}/">
+                {{video.title}}</a>
+            </b>
             <br>
             <div class="vid-title">
                 <button type="button" class="btn btn-success" value"Toggle" id="toggle">
@@ -49,12 +52,14 @@
 
             <p class="vid-desc">{{video.desc}}</p>
 
+            {% comment %}
             <div class="dropdown">
                 <button type="button" class="btn btn-primary" value"Toggle" id="toggle">V</button>
                 <div class="dropdown-content">
                     <p>{{video.comment}}</p>
                 </div>
             </div>
+            {% endcomment %}
         </li>
 
         </div>

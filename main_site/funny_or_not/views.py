@@ -17,3 +17,6 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         return Video.objects.order_by('-pub_date')[:5]
 
+class DetailView(generic.DetailView):
+    model = Video
+    template_name = 'funny_or_not/detail.html'

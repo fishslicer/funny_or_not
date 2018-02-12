@@ -1,0 +1,24 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'funny_or_not/style.css' %}" />
+
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+
+<html lang="en">
+
+<ul>
+{% for comment in video.comment_set.all %}
+    <li>
+        <b>{{comment.user}}:</b> {{comment.text}}
+    </li>
+{% endfor %}
+</ul>
+
+<a href="/funny_or_not/">go back</a>
+
+</html>
