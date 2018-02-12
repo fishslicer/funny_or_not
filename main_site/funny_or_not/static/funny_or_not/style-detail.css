@@ -1,0 +1,22 @@
+table {
+    border-collapse: collapse;
+    width: 80%;
+    align: center;
+}
+
+td, th {
+    border: 1px solid #000000;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.video {
+    padding: 10px;
+}
+
+body {
+    padding: 8px;
+}

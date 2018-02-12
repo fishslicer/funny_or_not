@@ -1,5 +1,5 @@
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'funny_or_not/style.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'funny_or_not/style-detail.css' %}" />
 
 <!DOCTYPE html>
 
@@ -10,15 +10,38 @@
 
 
 <html lang="en">
-
-<ul>
+<body>
+<h1>{{video.title}}</h1>
+<div class="video">
+    <div class="embed-responsive embed-responsive-16by9">
+        <iframe
+        src="{{video.link}}"
+        frameborder="0" allowfullscreen
+        align="center">
+        </iframe>
+    </div>
+</div>
+<div class="vid-title">
+    <button type="button" class="btn btn-success" value"Toggle" id="toggle">
+        <i class="fa fa-thumbs-up"></i>
+    </button>
+    <button type="button" class="btn btn-danger" value"Toggle" id="toggle">
+        <i class="fa fa-thumbs-down"></i>
+    </button>
+    {{video.get_funny_percent}}% Funny - <span style="color:green">{{video.get_funny}}</span>
+    vs. <span style="color:red">{{video.get_not_funny}}</span>
+</div>
+<hr>
+<h4> Comments: </h4>
+<table>
 {% for comment in video.comment_set.all %}
-    <li>
-        <b>{{comment.user}}:</b> {{comment.text}}
-    </li>
+    <tr>
+        <td><b>{{comment.user}}:</b></td>
+        <td>{{comment.text}}</td>
+    </tr>
 {% endfor %}
-</ul>
+</table>
 
 <a href="/funny_or_not/">go back</a>
-
+</body>
 </html>
