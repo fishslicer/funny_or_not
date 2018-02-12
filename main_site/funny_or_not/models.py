@@ -9,8 +9,35 @@ class Video(models.Model):
     not_funny = models.IntegerField(default=0)
     pub_date = models.DateTimeField('date posted')
 
-    def get_bar(self):
-        return (self.funny + 1) * 100 / (self.funny + self.not_funny + 1)
+    def get_funny_percent(self):
+        if(self.funny == 0 and self.not_funny == 0):
+            return 50
+        else:
+            return round((self.funny) * 100 / (self.funny + self.not_funny),1)
+
+    def increment_funny(self):
+        print("funny")
+        self.funny+=1
+
+    def increment_not_funny(self):
+        print("not funny")
+        self.not_funny+=1
+
+    def get_funny(self):
+        if(self.funny < 1000):
+            return self.funny;
+        elif(self.funny < 1000000):
+            return str(int(self.funny/1000)) + "K"
+        else:
+            return str(int(self.funny/1000/1000)) + "M"
+
+    def get_not_funny(self):
+        if(self.not_funny < 1000):
+            return self.not_funny;
+        elif(self.not_funny < 1000000):
+            return str(int(self.not_funny/1000)) + "K"
+        else:
+            return str(int(self.not_funny/1000/1000)) + "M"
 
 #comment to specific video
 class Comment(models.Model):

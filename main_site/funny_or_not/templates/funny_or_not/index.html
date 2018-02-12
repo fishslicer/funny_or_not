@@ -27,15 +27,18 @@
         <li>
             <b class="vid-title">{{video.title}}</b>
             <br>
-            <button type="button" class="btn btn-success" value"Toggle" id="toggle">
-                <i class="fa fa-thumbs-up"></i>
-            </button>
-            <button type="button" class="btn btn-danger" value"Toggle" id="toggle">
-                <i class="fa fa-thumbs-down"></i>
-            </button>
-            <br>
-            {{video.get_bar}}
-
+            <div class="vid-title">
+                <button type="button" class="btn btn-success" value"Toggle" id="toggle">
+                    <i class="fa fa-thumbs-up"></i>
+                </button>
+                <button type="button" class="btn btn-danger" value"Toggle" id="toggle">
+                    <i class="fa fa-thumbs-down"></i>
+                </button>
+            
+                <br>
+                {{video.get_funny_percent}}% Funny - <span style="color:green">{{video.get_funny}}</span>
+                vs. <span style="color:red">{{video.get_not_funny}}</span>
+            </div>
             <div class="embed-responsive embed-responsive-16by9">
                 <iframe
                 src="{{video.link}}"
@@ -49,7 +52,7 @@
             <div class="dropdown">
                 <button type="button" class="btn btn-primary" value"Toggle" id="toggle">V</button>
                 <div class="dropdown-content">
-                    <p>hi</p>
+                    <p>{{video.comment}}</p>
                 </div>
             </div>
         </li>
